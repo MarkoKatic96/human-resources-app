@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.praksa.intensproject.models.Candidate;
+import io.praksa.intensproject.models.Search;
 import io.praksa.intensproject.services.CandidateService;
 
 @RestController
@@ -50,5 +51,22 @@ public class CandidateController {
 		return (candidate != null) ? new ResponseEntity<Candidate>(candidate, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@RequestMapping(value = "/add/candidateSkill/{skillId}/{candidateId}", method = RequestMethod.PUT)
+	public ResponseEntity<Candidate> addSkillToSet(@PathVariable("skillId") Long skillId, @PathVariable("candidateId") Long candidateId){
+		Candidate candidate = candidateService.addSkillToSet(skillId, candidateId);
+		return (candidate != null) ? new ResponseEntity<Candidate>(candidate, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@RequestMapping(value = "/delete/candidateSkill/{skillId}/{candidateId}", method = RequestMethod.PUT)
+	public ResponseEntity<Candidate> removeSkillFromSet(@PathVariable("skillId") Long skillId, @PathVariable("candidateId") Long candidateId){
+		Candidate candidate = candidateService.removeSkillFromSet(skillId, candidateId);
+		return (candidate != null) ? new ResponseEntity<Candidate>(candidate, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public ResponseEntity<List<Candidate>> searchCandidate(@RequestBody Search search){
+		List<Candidate> candidateList = candidateService.search(search);
+		return (candidateList != null) ? new ResponseEntity<List<Candidate>>(candidateList, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
 
 }
