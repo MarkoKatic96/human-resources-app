@@ -35,7 +35,7 @@ public class Candidate {
 	@NotNull
 	private String email;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable( 
         name = "candidate_skills", 
         joinColumns = @JoinColumn(

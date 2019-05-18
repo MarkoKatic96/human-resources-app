@@ -10,7 +10,6 @@ import io.praksa.intensproject.models.Candidate;
 import io.praksa.intensproject.models.Search;
 import io.praksa.intensproject.models.Skill;
 import io.praksa.intensproject.repositories.CandidateRepository;
-import io.praksa.intensproject.repositories.SkillRepository;
 
 @Service
 public class CandidateService {
@@ -99,6 +98,33 @@ public class CandidateService {
 			}
 			candidate.setSkills(skills);
 			return candidateRepository.save(candidate);
+		}else {
+			return null;
+		}
+	}
+	
+	public List<Skill> notAquiredSkills(Long candidateId){
+		Candidate candidate = findCandidateById(candidateId);
+		if(candidate != null) {
+			int ima = 0;
+			List<Skill> returnList = new ArrayList<Skill>();
+			List<Skill> allSkills = new ArrayList<Skill>();
+			List<Skill> skills = new ArrayList<Skill>();	
+			allSkills.addAll(skillService.getAllSkills());
+			skills.addAll(candidate.getSkills());
+			for (Skill skill : allSkills) {
+				ima=0;
+				for(Skill skill2 : skills) {
+					if(skill2.getId() == skill.getId()) {
+						ima = 1;
+						break;//ima taj skill
+					}
+				}
+				if(ima!=1) {
+					returnList.add(skill);
+				}
+			}
+			return returnList;
 		}else {
 			return null;
 		}
