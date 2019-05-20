@@ -31,11 +31,12 @@ public class CandidateService {
 	public Candidate addCandidate(Candidate candidate) {
 		if(candidate != null) {
 			List<Candidate> candidates = getAllCandidates();
-			for (Candidate candidate2 : candidates) {
-				if(candidate2.getEmail().equals(candidate.getEmail())) {
-					return null; //vec postoji prijava sa istim emailom
+				for (Candidate candidate2 : candidates) {
+					if(candidate2.getEmail().equals(candidate.getEmail())) {
+						return null; //vec postoji prijava sa istim emailom
+					}
 				}
-			}
+
 			return candidateRepository.save(candidate);
 		}else {
 			return null;
@@ -149,11 +150,11 @@ public class CandidateService {
 			
 		}
 		
-		if(!search.getSkills().isEmpty()) {
+		if(search.getSkills()!=null) {
 			for(int i = 0; i<search.getSkills().size(); i++) { //prolazak kroz sve skillove iz search
 				for (Candidate candidate : returnCandidates) { //prolazak kroz sve kandidate
 					for(int g = 0; g<candidate.getSkills().size(); g++) { //prolazak kroz sve skillove trenutnog kandidata
-						if(search.getSkills().get(i).getId() == ((List<Skill>) candidate.getSkills()).get(g).getId()) {
+						if(search.getSkills().get(i) == ((List<Skill>) candidate.getSkills()).get(g).getId()) {
 							filteredCandidates.add(candidate);
 							break;
 						}

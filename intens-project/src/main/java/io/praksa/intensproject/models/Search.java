@@ -6,13 +6,13 @@ public class Search {
 
 	private String fullName;
 	
-	private List<Skill> skills;
+	private List<Long> skills;
 
 	public Search() {
 
 	}
 	
-	public Search(String fullName, List<Skill> skills) {
+	public Search(String fullName, List<Long> skills) {
 		super();
 		this.fullName = fullName;
 		this.skills = skills;
@@ -26,11 +26,11 @@ public class Search {
 		this.fullName = fullName;
 	}
 
-	public List<Skill> getSkills() {
+	public List<Long> getSkills() {
 		return skills;
 	}
 
-	public void setSkills(List<Skill> skills) {
+	public void setSkills(List<Long> skills) {
 		this.skills = skills;
 	}
 	

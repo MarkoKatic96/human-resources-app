@@ -26,7 +26,6 @@ public class Candidate {
 	@NotNull
 	private String fullName;
 	
-	@NotNull
 	private Date dateOfBirth;
 	
 	@NotNull
