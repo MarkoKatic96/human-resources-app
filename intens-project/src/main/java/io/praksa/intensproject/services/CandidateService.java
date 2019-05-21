@@ -71,8 +71,10 @@ public class CandidateService {
 	public Candidate addSkillToSet(Long skillId, Long candidateId) {
 		Candidate candidate = findCandidateById(candidateId);
 		if(candidate != null) {
-			List<Skill> skills = new ArrayList<Skill>();		
-			skills.addAll(candidate.getSkills());
+			List<Skill> skills = new ArrayList<Skill>();
+			if(candidate.getSkills()!=null) {
+				skills.addAll(candidate.getSkills());
+			}
 			for (Skill skill : skills) {
 				if(skill.getId() == skillId) {
 					return null; //vec ima taj skill
@@ -89,8 +91,10 @@ public class CandidateService {
 	public Candidate removeSkillFromSet(Long skillId, Long candidateId) {
 		Candidate candidate = findCandidateById(candidateId);
 		if(candidate != null) {
-			List<Skill> skills = new ArrayList<Skill>();		
-			skills.addAll(candidate.getSkills());
+			List<Skill> skills = new ArrayList<Skill>();
+			if(candidate.getSkills()!=null) {
+				skills.addAll(candidate.getSkills());
+			}
 			for (Skill skill : skills) {
 				if(skill.getId() == skillId) {
 					skills.remove(skill);
