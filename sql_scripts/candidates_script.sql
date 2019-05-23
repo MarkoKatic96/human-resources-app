@@ -1,0 +1,5 @@
+INSERT INTO `db_intens`.`candidate` (`id`, `date_of_birth`, `email`, `full_name`, `tel_number`) VALUES ('1', '1996-08-08', 'marko96@mail.com', 'Marko Katic', '069/1555444');
+INSERT INTO `db_intens`.`candidate` (`id`, `date_of_birth`, `email`, `full_name`, `tel_number`) VALUES ('2', '1994-05-12', 'pera@mail.com', 'Petar Petrovic', '069/1557221');
+INSERT INTO `db_intens`.`candidate` (`id`, `date_of_birth`, `email`, `full_name`, `tel_number`) VALUES ('3', '1999-01-05', 'ana@mail.com', 'Ana Simic', '063/2478241');
+INSERT INTO `db_intens`.`candidate` (`id`, `date_of_birth`, `email`, `full_name`, `tel_number`) VALUES ('4', '1991-07-05', 'letic@mail.com', 'Branislav Letic', '063/8777333');
+INSERT INTO `db_intens`.`candidate` (`id`, `date_of_birth`, `email`, `full_name`, `tel_number`) VALUES ('5', '1995-01-05', 'simic@mail.com', 'Ana Simic', '064/5888999');
