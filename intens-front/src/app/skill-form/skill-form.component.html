@@ -1,0 +1,15 @@
+<h1 style="text-align: center; font-family: sans-serif">Add a skill</h1>
+  <div class="createSkillDiv">
+    <form style="margin-left: 30px" (ngSubmit)="addSkill($event)">
+      <table style="width: 50%">
+        <tr>
+          <th><h3>Name:</h3></th>
+          <th><input type="text" name="nameInput" style="width: 250px;"></th>
+        </tr>
+        <tr style="text-align: left">
+          <th><input type="submit" id="addBtn" value="Add"></th>
+          <th><button (click)="cancel()" id="cancelBtn">Cancel</button></th>
+        </tr>
+      </table>
+    </form>
+  </div>

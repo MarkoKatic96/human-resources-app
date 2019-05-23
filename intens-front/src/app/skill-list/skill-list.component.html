@@ -1,0 +1,15 @@
+<h1 style="text-align: center; font-family: sans-serif">Select which skills you want to add to {{candidate.fullName}}</h1>
+<div *ngFor="let skill of skills" class="skillListDiv">
+  <div class="skillListContainer">
+      <table>
+        <tr>
+          <th style="width:100%">
+            <h1>{{skill.name}}</h1>
+          </th>
+          <th> 
+              <button id="addNonAquiredSkill" (click)="addNonAquiredSkill(skill.id)">Add</button>
+          </th>
+        </tr>
+      </table>
+  </div>
+</div>

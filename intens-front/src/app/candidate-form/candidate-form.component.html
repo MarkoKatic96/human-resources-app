@@ -1,0 +1,27 @@
+<h1 style="text-align: center; font-family: sans-serif;">Add a candidate</h1>
+  <div class="createCandidateDiv">
+    <form style="margin-left: 30px" (ngSubmit)="addCandidate($event)">
+      <table style="width: 50%">
+        <tr>
+          <th><h3>Full name:</h3></th>
+          <th><input type="text" name="fullNameInput" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Date of birth:</h3></th>
+          <th><input type="date" name="dateOfBirthInput" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Phone:</h3></th>
+          <th><input type="text" name="phoneInput" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Email:</h3></th>
+          <th><input type="text" name="emailInput" style="width: 250px;"></th>
+        </tr>
+        <tr style="text-align: left">
+          <th><input type="submit" id="addCandidateFormBtn" value="Add"></th>
+          <th><button (click)="cancelCandidate()" id="cancelCandidateFormBtn">Cancel</button></th>
+        </tr>
+      </table>
+    </form>
+  </div>

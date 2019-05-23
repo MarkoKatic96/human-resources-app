@@ -1,0 +1,27 @@
+<h1 style="text-align: center; font-family: sans-serif;">Edit candidate</h1>
+  <div class="editCandidateDiv">
+    <form style="margin-left: 30px" (ngSubmit)="editCandidate($event)">
+      <table style="width: 50%">
+        <tr>
+          <th><h3>Full name:</h3></th>
+          <th><input type="text" name="fullNameEdit" id="fullNameEdit" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Date of birth:</h3></th>
+          <th><input type="date" name="dateOfBirthEdit" id="dateOfBirthEdit" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Phone:</h3></th>
+          <th><input type="text" name="phoneEdit"  id="phoneEdit" style="width: 250px;"></th>
+        </tr>
+        <tr>
+          <th><h3>Email:</h3></th>
+          <th><input type="text" name="emailEdit" id="emailEdit" style="width: 250px;"></th>
+        </tr>
+        <tr style="text-align: left">
+          <th><input type="submit" id="editCandidateFormBtn" value="Edit"></th>
+          <th><button (click)="cancelCandidateEdit()" id="cancelEditCandidateFormBtn">Cancel</button></th>
+        </tr>
+      </table>
+    </form>
+  </div>

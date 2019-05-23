@@ -1,0 +1,18 @@
+<!--<h1>Hello</h1>
+<app-candidates [candidate]="candidate"></app-candidates>
+<input type = "text" [(ngModel)]="inputText">
+{{inputText}}
+<app-skills></app-skills>-->
+<header>
+    <div class="container">
+        <nav class="mainNav">
+            <ul class="navList"> 
+                <li><a routerLink="candidates">Candidates</a></li>
+                <li><a routerLink="skills">Skills</a></li>
+            </ul> 
+        </nav>
+    </div>
+</header>
+<div class="routerDiv">
+    <router-outlet></router-outlet>
+</div>
